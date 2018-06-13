@@ -1,6 +1,32 @@
 <?xml version="1.0" ?>
 <cherrytree>
-	<node custom_icon_id="0" foreground="" is_bold="False" name="python 研究" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528194270.7" ts_lastsave="1528882386.83" unique_id="1">
+	<node custom_icon_id="0" foreground="" is_bold="False" name="GIT練習" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528899948.93" ts_lastsave="1528900767.33" unique_id="8">
+		<rich_text>6/2 註冊</rich_text>
+		<rich_text link="webs https://github.com/Frankswde">https://github.com</rich_text>
+		<rich_text>
+名稱為Frankswde
+
+
+
+6/13 上傳檔案到github
+git config --global user.username Frankswde
+
+在github 建立新專案～Documents 
+</rich_text>
+		<rich_text scale="h1"> </rich_text>
+		<rich_text>echo &quot;# Documents&quot; &gt;&gt; README.md
+  git add README.md
+  git commit -m &quot;add README.md&quot;
+  git remote add origin https://github.com/Frankswde/Documents.git
+  git push -u origin master
+
+  git status
+
+    
+
+</rich_text>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="python 研究" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528194270.7" ts_lastsave="1528899948.93" unique_id="1">
 		<rich_text>6/4 在家
 6/5 在公司試用網路的bumblebee-status來直接做i3 bar ，效果還不錯，對裡面的箭形伸縮程式有興趣嘗試來了解一下
 
