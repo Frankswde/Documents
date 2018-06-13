@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<cherrytree>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="python 研究" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528194270.7" ts_lastsave="1528882386.83" unique_id="1">
+		<rich_text>6/4 在家
+6/5 在公司試用網路的bumblebee-status來直接做i3 bar ，效果還不錯，對裡面的箭形伸縮程式有興趣嘗試來了解一下
+
+6/13 
+
+</rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="bumblebee-status" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528296842.21" ts_lastsave="1528818690.11" unique_id="3">
+			<rich_text>#!/usr/bin/env python 
+※ 引用python
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</rich_text>
+			<rich_text foreground="#a0a02020f0f0" weight="heavy">import os
+import sys
+import logging
+import signal</rich_text>
+			<rich_text>
+※ import 為引述， os ，sys，logging，signal這為python 內建模組
+
+import bumblebee.theme
+import bumblebee.engine
+import bumblebee.config
+import bumblebee.output
+import bumblebee.input
+import bumblebee.modules.error
+
+try:
+    reload(sys)
+    sys.setdefaultencoding('UTF8')youtube
+except Exception:
+    pass
+
+
+def main():
+    def sig_USR1_handler(signum,stack):
+        engine.write_output()
+        
+    config = bumblebee.config.Config(sys.argv[1:])
+
+    if config.debug():
+        if config.logfile() in [&quot;stdout&quot;, &quot;stderr&quot;]:
+            logging.basicConfig(
+                level=logging.DEBUG,
+                format=&quot;[%(asctime)s] %(levelname)-8s %(message)s&quot;,
+                stream=sys.stdout if config.logfile() == &quot;stdout&quot; else sys.stderr
+            )
+        else:
+            logging.basicConfig(
+                level=logging.DEBUG,
+                format=&quot;[%(asctime)s] %(levelname)-8s %(message)s&quot;,
+                filename=config.logfile()
+            )
+
+    theme = bumblebee.theme.Theme(config.theme(), config.iconset())
+    output = bumblebee.output.I3BarOutput(theme=theme)
+    inp = bumblebee.input.I3BarInput()
+    engine = None
+
+    try:
+        engine = bumblebee.engine.Engine(
+            config=config,
+            output=output,
+            inp=inp,
+            theme=theme,
+        )
+        signal.signal(10,sig_USR1_handler)
+        engine.run()
+    except KeyboardInterrupt as error:
+        inp.stop()
+        sys.exit(0)
+    except BaseException as e:
+        if not engine: raise
+        module = engine.current_module()
+        logging.exception(e)
+        if output.started():
+            output.flush()
+            output.end()
+        else:
+            output.start()
+        import time
+        while True:
+            output.begin()
+            error = bumblebee.modules.error.Module(engine, config)
+            error.set(&quot;exception occurred: {} in {}&quot;.format(e, module))
+            widget = error.widgets()[0]
+            widget.link_module(error)
+            output.draw(widget, error)
+            output.flush()
+            output.end()
+            time.sleep(1)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+
+# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Python 筆記" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528389873.55" ts_lastsave="1528390679.77" unique_id="4">
+			<rich_text>參考網址：</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="config" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528390679.77" ts_lastsave="1528390682.72" unique_id="5">
+			<rich_text>i3 bar
+bar {
+    #status_command i3status -c ~/.config/i3/i3status/config
+status_command ~/bumblebee-status/bumblebee-status -m title memory load date time -p  time.format=&quot;%H:%M&quot; date.format=&quot;%Y %b %d %a&quot; -t greyish-powerline
+    # status_command conky -c ~/.config/i3/conkyrc
+    # status_command i3blocks -c  ~/.config/i3blocks/config
+    position top
+    
+    workspace_buttons yes
+    
+    tray_output primary
+    tray_padding 0
+    separator_symbol &quot;|&quot;
+
+    colors {
+    background #285477
+    statusline #dedede
+    separator #2d2d2d
+    focused_workspace #636e88 #285de7 #dedfdg
+    active_workspace #556677 #234567 #56ef67
+    inactive_workspace #636d72 #2d2d2d #dedede
+    urgent_workspace #ffffff #900000 #d23d32
+    }
+
+}</rich_text>
+		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Adata 測試狀況" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528280417.75" ts_lastsave="1528880662.05" unique_id="2">
+		<rich_text>☑ Ve 測試
+☐ 練習
+
+~~~~~~預計完成~~~~~~~~~~~~~~~~~~~~~~~~~~~
+☐ python 學習()
+☐ linux 系統 (archlinux 的安裝與設定等)
+☐ git 應用</rich_text>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="小說感想" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528821127.0" ts_lastsave="1528882489.31" unique_id="6">
+		<rich_text>• 多本作者群 #待補完中
+• 輕小說
+•  單本作者區
+• 連載中
+• 感想紀錄
+
+</rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Index" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528882475.35" ts_lastsave="1528882485.77" unique_id="7">
+			<rich_text>法家高徒
+
+百家争鸣，神道显圣。
+儒家可以出口成章，笔伐口诛。
+道家通阴阳，明造化，修成阳神，逍遥万世。
+墨家造傀儡，做机关，一城可以抵御百万雄兵。
+兵家修身，力拔山兮气盖世，有万夫不当之勇。法家位列三教九流之一，又有何神通？
+
+逍遙夢路</rich_text>
+		</node>
+	</node>
+</cherrytree>
