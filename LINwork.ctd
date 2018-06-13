@@ -136,10 +136,10 @@ status_command ~/bumblebee-status/bumblebee-status -m title memory load date tim
 ☐ linux 系統 (archlinux 的安裝與設定等)
 ☐ git 應用</rich_text>
 	</node>
-	<node custom_icon_id="0" foreground="" is_bold="False" name="小說感想" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528821127.0" ts_lastsave="1528882489.31" unique_id="6">
+	<node custom_icon_id="0" foreground="" is_bold="False" name="小說感想" prog_lang="custom-colors" readonly="False" tags="" ts_creation="1528821127.0" ts_lastsave="1528899814.75" unique_id="6">
 		<rich_text>• 多本作者群 #待補完中
 • 輕小說
-•  單本作者區
+• 單本作者區
 • 連載中
 • 感想紀錄
 
